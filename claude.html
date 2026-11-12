@@ -1,0 +1,14 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Claude Code öffnen</title>
+<p>Claude Code wird geöffnet …</p>
+<script>
+  const p = new URLSearchParams(location.search);
+  const url = "claude://code/new?folder=" + encodeURIComponent(p.get("folder") || "")
+            + "&q=" + encodeURIComponent(p.get("q") || "");
+  const a = document.createElement("a");
+  a.href = url;
+  a.textContent = "Falls nichts passiert: hier klicken";
+  document.body.append(a);
+  location.href = url;
+</script>
